@@ -1,5 +1,6 @@
-using PolynomialZonotopes
-using Base.Test
+using PolynomialZonotopes, Base.Test
 
-# write your own tests here
-@test 1 == 2
+# =====================================
+# Testing the polynomial zonotope type
+# =====================================
+@time @testset "LazySets.PolynomialZonotope" begin include("unit_PolynomialZonotope.jl") end
