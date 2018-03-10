@@ -13,7 +13,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "PolynomialZonotopes.jl",
     "category": "section",
-    "text": "DocTestFilters = [r\"[0-9\\.]+ seconds \\(.*\\)\"]PolynomialZonotopes is a Julia package that extends LazySets.jl to the non-convex sets representation given by polynomial zonotopes.Polynomial zonotopes were introduced by M. Althoff in Reachability analysis of nonlinear systems using conservative polynomialization and non-convex sets, Hybrid Systems: Computation and Control, 2013, pp. 173–182. For a mathematical description see the PolynomialZonotope\'s type help."
+    "text": "DocTestFilters = [r\"[0-9\\.]+ seconds \\(.*\\)\"]PolynomialZonotopes is a Julia package that extends LazySets.jl to the non-convex sets representation given by polynomial zonotopes. This library defines the PolynomialZonotope type and methods to manipulate them; see the manual sections Types and Methods in this documentation for further details.Pages = [\"index.md\"]"
 },
 
 {
@@ -21,7 +21,15 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "Features",
     "category": "section",
-    "text": "A PolynomialZonotopes type of arbitrary order.\nBasic set operations for polynomial zonotopes.\nOverapproximation of polynomial zonotopes with usual zonotopes and order reduction."
+    "text": "A PolynomialZonotope type of arbitrary order.\nBasic set operations (e.g. linear maps, Minkowski sum) for polynomial zonotopes.\nOverapproximation of polynomial zonotopes with usual zonotopes.\nOrder reduction of polynomial zonotopes."
+},
+
+{
+    "location": "index.html#Definition-1",
+    "page": "Home",
+    "title": "Definition",
+    "category": "section",
+    "text": "Polynomial zonotopes were introduced by M. Althoff in Reachability analysis of nonlinear systems using conservative polynomialization and non-convex sets, Hybrid Systems: Computation and Control, 2013, pp. 173–182. They have been applied as a non-convex set representation in the reachability problem if nonlinear ODEs.Mathematically, a polynomial zonotope is the tuple (c E F G) that defines the set:mathcalPZ = left c + _j=1^p _j f^(1 j) + _j=1^p _k=j^p _j _k f^(2 j k) + \nqquad +  + _j=1^p _k=j^p  _m=^p _j _k  _m f^( j k  m) + \n+ _i=1^q _i g^(i) qquad _i _i  -1 1 rightwhere the number of factors in the final product, _j _k  _m, corresponds to the polynomial order , and:c  mathbbR^n is the starting point (in some particular cases it corresponds to the center of a usual zonotope),\nE = E^1  E^ is an n  p  (+1)2 matrix with column-blocksE^i = f^(i 1 1  1)  f^(i p p  p) qquad i = 1 called the matrix of multi-indexed generators with equal indices, where each f^(i k_1 k_2  k_i) is an n-vector,F = F^2  F^ is a matrix with column-blocksF^i = f^(i 1 1  1 2) f^(i 1 1  1 3)  f^(i 1 1  1 p) \nf^(i 1 1  2 2) f^(i 1 1  2 3)  f^(i 1 1  2 p) \nf^(i 1 1  3 3)  qquad i = 1 called the matrix of multi-indexed generators with unequal indices (or, more accurately, not-all-equal indices), where each f^(i k_1 k_2  k_i) is an n-vector,G = G^1  G^q is an n  q matrix with columnsG^i = g^(i) qquad i = 1 qcalled the matrix of single-indexed generators, where each g^(i) is an n-vector."
 },
 
 {
@@ -73,6 +81,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "lib/methods.html#Methods-1",
+    "page": "Methods",
+    "title": "Methods",
+    "category": "section",
+    "text": "This section describes systems methods implemented in PolynomialZonotopes.jl.Pages = [\"methods.md\"]\nDepth = 3CurrentModule = PolynomialZonotopes\nDocTestSetup = quote\n    using PolynomialZonotopes\nend"
+},
+
+{
     "location": "lib/methods.html#PolynomialZonotopes.dim-Tuple{PolynomialZonotopes.PolynomialZonotope}",
     "page": "Methods",
     "title": "PolynomialZonotopes.dim",
@@ -105,6 +121,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "lib/methods.html#Properties-1",
+    "page": "Methods",
+    "title": "Properties",
+    "category": "section",
+    "text": "dim(pz::PolynomialZonotope)\nσ(d::AbstractVector{Float64}, pz::PolynomialZonotope{Float64})\npolynomial_order(pz::PolynomialZonotope)\norder(pz::PolynomialZonotope)"
+},
+
+{
     "location": "lib/methods.html#PolynomialZonotopes.linear_map-Tuple{Array{T,2} where T,PolynomialZonotopes.PolynomialZonotope}",
     "page": "Methods",
     "title": "PolynomialZonotopes.linear_map",
@@ -129,11 +153,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "lib/methods.html#Methods-1",
+    "location": "lib/methods.html#Operations-1",
     "page": "Methods",
-    "title": "Methods",
+    "title": "Operations",
     "category": "section",
-    "text": "This section describes systems methods implemented in PolynomialZonotopes.jl.Pages = [\"methods.md\"]\nDepth = 3CurrentModule = PolynomialZonotopes\nDocTestSetup = quote\n    using PolynomialZonotopes\nenddim(pz::PolynomialZonotope)\nσ(d::AbstractVector{Float64}, pz::PolynomialZonotope{Float64})\npolynomial_order(pz::PolynomialZonotope)\norder(pz::PolynomialZonotope)\nlinear_map(M::Matrix, pz::PolynomialZonotope)\nscale(α::Number, pz::PolynomialZonotope)\nminkowski_sum(pz::PolynomialZonotope, z::Zonotope)"
+    "text": "linear_map(M::Matrix, pz::PolynomialZonotope)\nscale(α::Number, pz::PolynomialZonotope)\nminkowski_sum(pz::PolynomialZonotope, z::Zonotope)"
 },
 
 {
