@@ -14,11 +14,18 @@ DocTestSetup = quote
 end
 ```
 
+## Properties
+
 ```@docs
 dim(pz::PolynomialZonotope)
 σ(d::AbstractVector{Float64}, pz::PolynomialZonotope{Float64})
 polynomial_order(pz::PolynomialZonotope)
 order(pz::PolynomialZonotope)
+```
+
+## Operations
+
+```@docs
 linear_map(M::Matrix, pz::PolynomialZonotope)
 scale(α::Number, pz::PolynomialZonotope)
 minkowski_sum(pz::PolynomialZonotope, z::Zonotope)
