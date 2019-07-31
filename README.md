@@ -12,6 +12,8 @@
 It is written in [Julia](http://julialang.org), a modern high-performance language
 for scientific computing.
 
+**WARNING:**  *This package has been deprecated and is no longer maintained. The functionality in this package has been moved to [LazySets.jl](https://github.com/JuliaReach/LazySets.jl/).*
+
 ## Resources
 
 - [Manual](http://juliareach.github.io/PolynomialZonotopes.jl/latest/)
