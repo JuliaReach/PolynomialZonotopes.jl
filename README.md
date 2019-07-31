@@ -23,7 +23,7 @@ for scientific computing.
 
 ### Dependencies
 
-This package requires Julia v0.6 or later. Refer to the [official documentation](https://julialang.org/downloads)
+This package requires Julia v0.6. Refer to the [official documentation](https://julialang.org/downloads)
 on how to install and run Julia in your system.
 
 To install the [LazySets.jl](https://github.com/JuliaReach/LazySets.jl) dependency,
